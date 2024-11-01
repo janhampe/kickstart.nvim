@@ -92,7 +92,13 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
+  -- {
+	 --  "L3MON4D3/LuaSnip",
+	 --  -- follow latest release.
+	 --  version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	 --  -- install jsregexp (optional!).
+	 --  build = "make install_jsregexp"
+  -- },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -233,6 +239,9 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- Set relativ line numbers
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -447,12 +456,13 @@ end
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  clangd = {},
+  gopls = {},
+  julials = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
     Lua = {
